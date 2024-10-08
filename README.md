@@ -10,6 +10,7 @@ This is a **Flutter Web** application built with clean architecture principles u
 - **🧩 State Management**: Uses `flutter_bloc` and `freezed` for efficient and structured state management.
 - **🔧 Dependency Injection**: `get_it` is used for smooth dependency injection, keeping the app modular and testable.
 - **🧱 Clean Architecture**: Built using clean architecture principles, ensuring scalability, maintainability, and separation of concerns.
+- **🖼️ Responsive**: Responsive for all devices.
 
 ### 🌍 Deployment:
 - The app is deployed on **GitHub Pages**. To access the live demo, [click here](https://Khalidali-dev.github.io).

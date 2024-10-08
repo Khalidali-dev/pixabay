@@ -15,7 +15,26 @@ class HomePage extends StatelessWidget {
       body: BlocBuilder<ImagesBloc, ImagesState>(
         builder: (context, state) {
           if (state.status == APIStatus.loading) {
-            return const LoadingWidget();
+            return GridView.builder(
+              padding: paddingAll,
+              physics: const BouncingScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisSpacing: 30,
+                  mainAxisSpacing: 30,
+                  crossAxisCount: size.width > 1200
+                      ? 6
+                      : size.width > 500
+                          ? 4
+                          : 2),
+              itemCount: size.width > 1200
+                  ? 18
+                  : size.width > 500
+                      ? 12
+                      : 6,
+              itemBuilder: (context, index) {
+                return const ShimmerEffect();
+              },
+            );
           }
 
           if (state.status == APIStatus.error) {

@@ -1,4 +1,3 @@
-import '../../../features/internet_connectivity/internet_connectivity_screen.dart';
 import '../../../src.dart';
 
 class RouteSetting {

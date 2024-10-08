@@ -1,3 +1,4 @@
+import 'src/cores/common/shimmer_effect_widget.dart';
 import 'src/src.dart';
 
 void main() {
@@ -14,11 +15,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Pixabay',
-      themeMode: ThemeMode.system,
-      initialRoute: RouteName.internetConnection,
-      onGenerateRoute: RouteSetting.generateRoute,
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Pixabay',
+        themeMode: ThemeMode.system,
+        initialRoute: RouteName.internetConnection,
+        onGenerateRoute: RouteSetting.generateRoute,
+        );
   }
 }

@@ -1,1 +1,3 @@
-export '../home/presentation/pages/home_page.dart';
+export '../home/data/data.dart';
+export '../home/domain/domain.dart';
+export './presentation/presentation.dart';

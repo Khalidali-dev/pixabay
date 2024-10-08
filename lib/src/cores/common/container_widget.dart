@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+
 import '../../src.dart';
 
 class ContainerWidget extends StatelessWidget {
@@ -16,8 +18,8 @@ class ContainerWidget extends StatelessWidget {
     this.alignment,
     this.margin,
     this.padding,
-    this.isDark = true,
     this.colorsList,
+    required this.image,
   });
 
   final double? width, height;
@@ -29,42 +31,31 @@ class ContainerWidget extends StatelessWidget {
   final Alignment? alignment;
   final EdgeInsetsGeometry? margin, padding;
   final List<Color>? colorsList;
-  final bool isDark;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-
-    // return BlocBuilder<ItemsBloc, ItemsState>(builder: (context, state) {
-    // var isDark = state.themeMode == ThemeMode.dark;
-    // var defaultColorsList = state.themeMode == ThemeMode.dark
-    //     ? [
-    //         Colors.grey.shade800,
-    //         Colors.blueGrey.shade900,
-    //       ]
-    //     : [Colors.grey.shade50, Colors.blueGrey.shade50];
     return Container(
       width: width ?? size.width,
       height: height ?? size.height,
-      alignment: alignment ?? Alignment.center,
+      alignment: alignment ?? Alignment.topRight,
       margin: isMargin == true ? margin : const EdgeInsets.all(0),
-      padding: isPadding == true ? padding : const EdgeInsets.all(0),
+      padding: isPadding == true ? padding : const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        borderRadius: borderRadius ?? BorderRadius.circular(10),
+        borderRadius: borderRadius ?? BorderRadius.circular(20),
+        image: DecorationImage(
+            image: CachedNetworkImageProvider(image), fit: BoxFit.fill),
         boxShadow: [
           BoxShadow(
               offset: const Offset(-2, 2),
               blurRadius: 5,
-              color: isDark ? Colors.black : Colors.grey.withOpacity(.5))
+              color: Colors.grey.withOpacity(.5))
         ],
-        gradient: LinearGradient(
-          colors: colorsList ?? [],
-        ),
         color: color ?? Theme.of(context).scaffoldBackgroundColor,
         border: border ?? Border.all(width: 0, color: Colors.transparent),
       ),
       child: child,
     );
-    // });
   }
 }

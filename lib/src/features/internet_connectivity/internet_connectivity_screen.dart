@@ -5,28 +5,15 @@ class InternetConnectivityScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder(
-      stream: Connectivity().onConnectivityChanged,
-      builder: (context, snapshot) {
-        // Show loading indicator while waiting for connectivity
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const HomePage();
+    context.read<ImagesBloc>().add(InternetManager());
+    return BlocBuilder<ImagesBloc, ImagesState>(
+      builder: (context, state) {
+        if (state.isConnected == null) {
+          return const LoadingWidget();
         }
-
-        // Check for connectivity
-        if (snapshot.hasData) {
-          final connectivityResult = snapshot.data;
-          // No internet connection
-          if (connectivityResult!.contains(ConnectivityResult.none)) {
-            return const NoInternetConnectionWidget();
-          }
-
-          // Internet is available, check the token
-          return const HomePage();
-        }
-
-        // Handle other cases (shouldn't reach here)
-        return const NoInternetConnectionWidget();
+        return state.isConnected!
+            ? const HomePage()
+            : const NoInternetConnectionWidget();
       },
     );
   }
@@ -48,9 +35,11 @@ class NoInternetConnectionWidget extends StatelessWidget {
               width: 300,
               height: 300,
             ),
+            height(20),
             const Text(
-              'No internet connection.\nPlease check your network setting.',
+              'No internet connection.\nPlease check your network settings.',
               textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 18),
             ),
           ],
         ),

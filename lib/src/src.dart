@@ -9,3 +9,4 @@ export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:connectivity_plus/connectivity_plus.dart';
 export 'package:http/http.dart';
 export 'dart:async';
+export 'package:pixabay/env.dart';

@@ -1,47 +1,15 @@
+# 🌐 Pixabay Image Viewer - Flutter Web App
 
+This is a **Flutter Web** application built with clean architecture principles using `flutter_bloc`, `connectivity_plus`, `freezed`, and `get_it` for dependency injection. The app fetches beautiful images from the **Pixabay API** 📸 and displays likes 👍 and views 👁️ for each image.
 
-Flutter Clean Architecture 🧼
+### 🚀 [Live Demo](https://Khalidali-dev.github.io) on GitHub Pages
 
-A robust Flutter project template featuring:
+## ✨ Features:
+- **📶 Real-time Connectivity**: Seamlessly handles internet connectivity status using `connectivity_plus`, updating the UI when you're offline or online.
+- **🖼️ Image Fetching**: Fetches high-quality images along with their likes and view counts from the Pixabay API.
+- **🧩 State Management**: Uses `flutter_bloc` and `freezed` for efficient and structured state management.
+- **🔧 Dependency Injection**: `get_it` is used for smooth dependency injection, keeping the app modular and testable.
+- **🧱 Clean Architecture**: Built using clean architecture principles, ensuring scalability, maintainability, and separation of concerns.
 
-🧹 Internationalization: Seamlessly adapt your app to different languages and locales.
-🎨 Themes: Easily customize your app's appearance with multiple themes.
-🧱 Global Widgets: Reusable UI components for consistent design.
-🛡️ Exception Handling: Graceful error management for a smooth user experience.
-🚦 Flutter Bloc: State management using the Flutter Bloc pattern.
-❄️ Freezed: Code generation for immutable data classes.
-💉 Get It: Dependency Injection for clean and maintainable code.
-
-Clean Architecture is a software design pattern that promotes separation of concerns and testability. In Flutter, it involves organizing your code into layers:
-
-Presentation Layer: Handles user interaction and UI elements.
-Domain Layer: Contains the core business logic and domain entities.
-Data Layer: Interacts with data sources like APIs and databases.
-
-
-
-Flutter Clean Architecture 🧼
-
-lib/
-├── core/                   # Shared core logic, e.g., error handling
-├── data/
-│   ├── datasources/        # Data sources like APIs
-│   │   └── user_remote_data_source.dart
-│   └── repositories/       # Repository implementations
-│       └── user_repository_impl.dart
-├── domain/
-│   ├── entities/           # Immutable classes
-│   │   └── user.dart
-│   ├── repositories/       # Repository interfaces
-│   │   └── user_repository.dart
-│   └── usecases/           # Business logic
-│       └── get_user_usecase.dart
-├── presentation/
-│   ├── bloc/               # BLoC logic for state management
-│   │   ├── user_bloc.dart
-│   │   ├── user_event.dart
-│   │   └── user_state.dart
-│   └── pages/              # UI pages
-│       └── user_page.dart
-├── injection.dart          # Dependency injection setup
-└── main.dart               # Entry point of the application
+### 🌍 Deployment:
+- The app is deployed on **GitHub Pages**. To access the live demo, [click here](https://Khalidali-dev.github.io).

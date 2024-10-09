@@ -1,3 +1,5 @@
+import 'package:pixabay/src/features/home/presentation/widgets/details_widget.dart';
+
 import '../../../../src.dart';
 
 class HomePage extends StatelessWidget {

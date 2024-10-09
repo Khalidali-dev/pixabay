@@ -1,4 +1,5 @@
 import '../../../../src.dart';
+import 'details_widget.dart';
 
 class ImagesWidget extends StatelessWidget {
   const ImagesWidget({super.key, required this.images});
@@ -22,41 +23,47 @@ class ImagesWidget extends StatelessWidget {
       itemCount: images.length,
       itemBuilder: (context, index) {
         final image = images[index];
-        return ContainerWidget(
-          padding: padding10,
-          image: image.largeImageURL,
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Column(
-                  children: [
-                    const Icon(
-                      Icons.visibility,
-                      color: Colors.white,
-                      size: 20,
-                    ),
-                    Text(
-                      formatNumber(image.views),
-                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                            color: Colors.white,
-                          ),
-                    ),
-                    height(8),
-                    const Icon(
-                      Icons.thumb_up,
-                      color: Colors.white,
-                      size: 20,
-                    ),
-                    Text(
-                      formatNumber(image.likes),
-                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                            color: Colors.white,
-                          ),
-                    ),
-                  ],
-                ),
-              ]),
+        return InkWell(
+          borderRadius: BorderRadius.circular(20),
+          onTap: () => navigate(
+              context: context,
+              screen: DetailsPage(image: image.largeImageURL)),
+          child: ContainerWidget(
+            padding: padding10,
+            image: image.largeImageURL,
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Column(
+                    children: [
+                      const Icon(
+                        Icons.visibility,
+                        color: Colors.white,
+                        size: 20,
+                      ),
+                      Text(
+                        formatNumber(image.views),
+                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                              color: Colors.white,
+                            ),
+                      ),
+                      height(8),
+                      const Icon(
+                        Icons.thumb_up,
+                        color: Colors.white,
+                        size: 20,
+                      ),
+                      Text(
+                        formatNumber(image.likes),
+                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                              color: Colors.white,
+                            ),
+                      ),
+                    ],
+                  ),
+                ]),
+          ),
         );
       },
     );

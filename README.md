@@ -11,6 +11,7 @@ This is a **Flutter Web** application built with clean architecture principles u
 - **🔧 Dependency Injection**: `get_it` is used for smooth dependency injection, keeping the app modular and testable.
 - **🧱 Clean Architecture**: Built using clean architecture principles, ensuring scalability, maintainability, and separation of concerns.
 - **🖼️ Responsive**: Responsive for all devices.
+- **🖼️ View Image**: Click on any image to view full image preview also go back to Dashboard.
 
 ### 🌍 Deployment:
 - The app is deployed on **GitHub Pages**. To access the live demo, [click here](https://Khalidali-dev.github.io).
